@@ -26,9 +26,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="part1.html">Part 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="part2.html">Part 2 </a></li>
-                        <li class="nav-item"><a class="nav-link" href="part3.html">Part 3 </a></li>
+                        <li class="nav-item"><a class="nav-link" href="part1.html">Part 1</a></li>
+                        <li class="nav-item"><a class="nav-link " href="part2.html">Part 2</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="part3.html">Part 3 </a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -45,8 +46,8 @@
                     limit 100" onClick="reply_click(this)">3.1</button>
                     <button name="3.2" class="btn btn-success btn-block" data-sql="select  avg(c.salary) as avg_salary ,b.title, a.gender from employees a  inner join titles b on a.emp_id = b.emp_id inner join salaries c on c.emp_id = b.emp_id where b.title = 'Technique Leader' group by a.gender limit 100" onClick="reply_click(this)"> 3.2</button>
                     <button name="3.3" class="btn btn-success btn-block" data-sql="select count(a.emp_id) as num_emp  from employees a inner join salaries b ON a.emp_id = b.emp_id where b.salary between 90000 and 90040 and b.to_date=  '9999-01-01' limit 100" onClick="reply_click(this)">3.3</button>
-                    <button name="3.4" class="btn btn-success btn-block" data-sql="select * from employees where hire_date < '1986-01-01' and last_name = 'Simmel' limit 100" onClick="reply_click(this)">3.4</button>
-                    <button name="3.5" class="btn btn-success btn-block" data-sql="select  count(last_name) as total_with_B from  employees where last_name like  'B%' limit 100" onClick="reply_click(this)">3.5</button>
+                    <button name="3.4" class="btn btn-success btn-block" data-sql="select  a.first_name, a.last_name, b.salary, b.to_date from employees a inner join salaries b on a.emp_id = b.emp_id where b.to_date = '9999-01-01' and b.salary > 90000 group by a.first_name,a.last_name order by a.last_name ,a.first_name desc limit 100" onClick="reply_click(this)">3.4</button>
+                    <button name="3.5" class="btn btn-success btn-block" data-sql="select  a.first_name, a.last_name, b.salary, b.from_date, b.to_date from employees a inner join salaries b on b.emp_id = a.emp_id where a.emp_id = 10012 limit 100;" onClick="reply_click(this)">3.5</button>
                     
                 </div>
                 <div class="col-lg-10 order-2 border-success">
